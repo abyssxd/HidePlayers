@@ -3,6 +3,7 @@ toggle-item:
   name: "&aToggle Players"
   lore:
     - "&7Click to hide/show players"
+  glow: true
 
 auto-give:
   enabled: true
@@ -11,3 +12,8 @@ auto-give:
 options:
   movable: false
   droppable: false
+
+bossbar:
+  enabled: true
+  color: "RED"      #possible values: BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
+  style: "SOLID"    #possible values: SOLID, SEGMENTED_6, SEGMENTED_10, etc.

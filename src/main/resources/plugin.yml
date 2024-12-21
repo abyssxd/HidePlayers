@@ -5,3 +5,7 @@ api-version: 1.13
 authors: [ AbisGamer ]
 description: Hides players
 website: https://abishekbhusal.com
+commands:
+  hideplayers:
+    description: Hide or show other players
+    usage: /hideplayers [toggle|setitem]

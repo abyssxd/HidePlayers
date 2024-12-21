@@ -1,0 +1,7 @@
+no_permission: "&cYou do not have permission!"
+player_only: "&cOnly players can do this!"
+toggle_on: "&aAll players hidden!"
+toggle_off: "&aYou can now see all players!"
+setitem_no_item: "&cYou must be holding a valid item to set."
+setitem_success: "&aHide/Show toggle item has been updated in the config!"
+bossbar_message: "&cPlayers are hidden!"

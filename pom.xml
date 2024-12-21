@@ -6,7 +6,7 @@
 
     <groupId>com.abishekbhusal</groupId>
     <artifactId>HidePlayers</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>HidePlayers</name>
