@@ -1,0 +1,13 @@
+toggle-item:
+  material: BLAZE_ROD
+  name: "&aToggle Players"
+  lore:
+    - "&7Click to hide/show players"
+
+auto-give:
+  enabled: true
+  slot: 8
+
+options:
+  movable: false
+  droppable: false

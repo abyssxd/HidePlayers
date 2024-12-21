@@ -1,0 +1,7 @@
+name: HidePlayers
+version: '${project.version}'
+main: com.abishekbhusal.hideplayers.HidePlayers
+api-version: 1.13
+authors: [ AbisGamer ]
+description: Hides players
+website: https://abishekbhusal.com
