@@ -17,3 +17,9 @@ bossbar:
   enabled: true
   color: "RED"      #possible values: BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
   style: "SOLID"    #possible values: SOLID, SEGMENTED_6, SEGMENTED_10, etc.
+
+worlds:
+  use-whitelist: false
+  whitelist:
+    - "world"
+    - "world_nether"

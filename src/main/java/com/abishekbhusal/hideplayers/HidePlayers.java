@@ -107,6 +107,10 @@ public class HidePlayers extends JavaPlugin implements Listener, TabExecutor {
     }
 
     private void togglePlayerVisibility(Player player) {
+        if (!isAllowedWorld(player)) {
+            player.sendMessage(getMessage("disallowed_world"));
+            return;
+        }
         UUID uuid = player.getUniqueId();
         boolean currentlyHidden = hiddenPlayers.contains(uuid);
         if (currentlyHidden) {
@@ -136,6 +140,14 @@ public class HidePlayers extends JavaPlugin implements Listener, TabExecutor {
                 player.showPlayer(this, other);
             }
         }
+    }
+
+    private boolean isAllowedWorld(Player player) {
+        if (!config.getBoolean("worlds.use-whitelist", false)) {
+            return true;
+        }
+        List<String> whitelist = config.getStringList("worlds.whitelist");
+        return whitelist.contains(player.getWorld().getName());
     }
 
     private void showBossBar(Player player) {
@@ -211,6 +223,9 @@ public class HidePlayers extends JavaPlugin implements Listener, TabExecutor {
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
+        if (!isAllowedWorld(player)) {
+            return;
+        }
         boolean autoGive = config.getBoolean("auto-give.enabled", true);
         int slot = config.getInt("auto-give.slot", 8);
         if (!autoGive) return;
@@ -253,8 +268,15 @@ public class HidePlayers extends JavaPlugin implements Listener, TabExecutor {
             ItemStack item = event.getItem();
             Player player = event.getPlayer();
             if (item == null) return;
-            if (!player.hasPermission("hideplayers.use")) return;
+            if (!player.hasPermission("hideplayers.use")){
+                player.sendMessage(getMessage("no_permission"));
+                return;
+            }
             if (isToggleItem(item)) {
+                if (!isAllowedWorld(player)) {
+                    player.sendMessage(getMessage("disallowed_world"));
+                    return;
+                }
                 togglePlayerVisibility(player);
                 event.setCancelled(true);
             }
