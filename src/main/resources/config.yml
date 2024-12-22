@@ -23,3 +23,9 @@ worlds:
   whitelist:
     - "world"
     - "world_nether"
+
+worldguard:
+  enabled: true
+  force-hidden-regions:
+    - "lobby_region"
+    - "parkour_zone"
